@@ -8,7 +8,7 @@ consumed =[]
 
 @route('/')
 def hello():
-    return template('beerRoulette.tpl', beers = beers, consumed = consumed)
+    return template('RouletteHome.tpl', beers = beers, consumed = consumed)
 
 @route('/add', method="POST")
 def add_beer():
@@ -20,7 +20,7 @@ def add_beer():
 
 @route('/static/<filepath:path>', method="GET")
 def server_static(filepath):
-    return static_file(filepath, root=r'D:\users\jlv0127\PycharmProjects\bottleTesting')
+    return static_file(filepath, root=r'PATH TO YOUR BEER ROULETTE FOLDER HERE')
 
 @route('/pick', method="POST")
 def pick_beer():
@@ -31,7 +31,7 @@ def pick_beer():
         if len(beers) == 0:
             del beers[:]
             del consumed[:]
-            return template('complete.tpl')
+            return template('RouletteComplete.tpl')
         return redirect('/')
     return redirect('/')
 
