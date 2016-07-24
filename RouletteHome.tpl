@@ -33,6 +33,9 @@
 			<input type="submit" value="Pick Beer">
 			</p>
 			</form>
+			<form action="/remove" method="post">
+			<input type="submit" value="Remove Last Beer">
+			</form>
 	</div>
 	<div align="center">
 	<u><h2>Chosen Beers</h2></u>
