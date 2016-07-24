@@ -36,5 +36,12 @@ def pick_beer():
         return redirect('/')
     return redirect('/')
 
+@route('/remove', method="POST")
+def remove_beer():
+    if len(beers) != 0:
+        del beers[-1]
+        return redirect('/')
+    else:
+        return redirect('/')
 
 run(host = HOST, port=8080, debug=True)
