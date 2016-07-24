@@ -1,5 +1,6 @@
 from bottle import *
 import random as rnd
+import os
 
 HOST = 'localhost'
 
@@ -20,7 +21,7 @@ def add_beer():
 
 @route('/static/<filepath:path>', method="GET")
 def server_static(filepath):
-    return static_file(filepath, root=r'PATH TO YOUR BEER ROULETTE FOLDER HERE')
+    return static_file(filepath, root=os.path.abspath(os.path.dirname(__file__)))
 
 @route('/pick', method="POST")
 def pick_beer():
