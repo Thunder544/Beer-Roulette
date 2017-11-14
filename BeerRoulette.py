@@ -2,7 +2,8 @@ from bottle import *
 import random as rnd
 import os
 
-HOST = 'localhost'
+#HOST = 'localhost'
+HOST = "192.168.2.104"
 
 beers =[]
 consumed =[]
